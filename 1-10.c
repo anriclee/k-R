@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// todo: I have no idea how to print \b in the command line.
+
 int main (int argc, char *argv[])
 {
   int c;
