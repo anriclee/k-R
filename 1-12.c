@@ -20,12 +20,12 @@ int main (int argc, char *argv[])
     if (c == ' ' || c == '\n' || c == '\t') {
       state = OUT;
       printf("\n");
-    } else if (state == OUT) {
-      state = IN;
-      putchar(c);
-      nw++;
     } else {
       putchar(c);
+      if (state == OUT) {
+        state = IN;
+        nw++;
+      } 
     }
   }
 
