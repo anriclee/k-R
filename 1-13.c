@@ -50,25 +50,16 @@ int main(int argc, char *argv[]) {
   // copy original array
 
   printf("========= VERTICALLY PRINTED ========\n");
-  int wordLenCountCopy[appearedMaxLen];
   int maxTimes = 0;
   for (int i = 0; i <= appearedMaxLen; i++) {
-    wordLenCountCopy[i] = wordLenCount[i];
-    if (wordLenCountCopy[i] > maxTimes) {
-      maxTimes = wordLenCountCopy[i];
+    if (wordLenCount[i] > maxTimes) {
+      maxTimes = wordLenCount[i];
     }
   }
-  for (int i = 1; i <= appearedMaxLen; i++) {
-    printf("%3d", i);
-  }
   printf("\n");
-  // printf("maxTimes:%d\n",maxTimes);
-  for (int i = 1; i <= maxTimes; i++) {
+  for (int i = maxTimes; i >= 1; i--) {
     for (int j = 1; j <= appearedMaxLen; j++) {
-      // printf("wl %d count:%d\n",j,wordLenCountCopy[j]);
-      if (wordLenCountCopy[j] > 0) {
-        wordLenCountCopy[j]--;
-        // printf("set index %d\n",j);
+      if (wordLenCount[j] >= i) {
         printf("  *");
       } else {
         printf("   "); //  print space for holder
@@ -76,7 +67,11 @@ int main(int argc, char *argv[]) {
     }
     printf("\n");
   }
-  printf("\n");
 
+  for (int i = 1; i <= appearedMaxLen; i++) {
+    printf("%3d", i);
+  }
+
+  printf("\n");
   return 0;
 }
