@@ -35,4 +35,4 @@ int main (int argc, char *argv[])
   return 0;
 }
 
-/* I have no idea how to test it, according to an answer from ZhiHu, an case can be tested using a ' ? ', then the '?' can be recognized to an new word .*/
+/* I have no idea how to test it, according to a answer from ZhiHu, a case can be tested using a ' ? ', then the '?' can be recognized to an new word .*/
