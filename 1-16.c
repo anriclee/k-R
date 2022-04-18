@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
 
   if (max_length > 0) {
     printf("%s\n", longest);
-    printf("len is:%d\n",max_length);
+    printf("len is:%d\n", max_length);
   }
 
   return 0;
@@ -38,8 +38,13 @@ int get_input_line(char line[], int maxline) {
   if (c == '\n') {
     line[i] = c;
     i++;
+    line[i] = '\0';
+  } else {
+    // for loop end cause of i has reached maxline - 1
+    while ((c = getchar()) != EOF) {
+      i++;
+    }
   }
-  line[i] = '\0';
   return i;
 }
 
